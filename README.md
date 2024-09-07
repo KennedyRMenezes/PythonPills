@@ -11,5 +11,18 @@ O catalogo_1 são os códigos que escrevi para consultar as funcionalidades do P
 
 O gpt_tutor são desafios que perguntei ao Chat GPT para que eu pudesse ir fazendo. Essa estratégia é semelhante às diversas plataformas de codificação como Hacker Hank. Mas decidi fazer as minha com mais liberdade.
 
+##### índice - conceitos mais importantes
+- [6] invertendo uma lista com *slicling python* ([start:stop:step])
+- [7] string palíndromo (pLp)
+            - [] um sub desafio é: como fazer ser uma string ser pLp dando un ~pLp como input
+- [8] quantidade de vogais em uma palavra
+- [10] primeiros 10 nºs quadrados usando *list comprehension*
+- [11] concatenando duas listas com *extend()*
+- [12] removendo duplicadas usando *dict.fromkeys()*
+- [16] contar a frequência de palavras em um texto
+- [19] gerar números primos até um teto
+- [20] 3 modos de se fazer uma matriz identidade
+- [21] busca binária
+
 
 
