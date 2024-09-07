@@ -14,7 +14,7 @@ O gpt_tutor são desafios que perguntei ao Chat GPT para que eu pudesse ir fazen
 ##### índice - conceitos mais importantes
 - [6] invertendo uma lista com *slicling python* ([start:stop:step])
 - [7] string palíndromo (pLp)
-            - [] um sub desafio é: como fazer ser uma string ser pLp dando un ~pLp como input
+    - [ ] [7.1] um sub desafio é: como fazer ser uma string ser pLp dando un ~pLp como input
 - [8] quantidade de vogais em uma palavra
 - [10] primeiros 10 nºs quadrados usando *list comprehension*
 - [11] concatenando duas listas com *extend()*
