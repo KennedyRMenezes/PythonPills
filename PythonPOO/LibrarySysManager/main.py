@@ -1,6 +1,6 @@
 from Library import Library
 from Media import *
-from User import User
+from User import *
 
 bma = Library(
     "Biblioteca Mário de Andrade",

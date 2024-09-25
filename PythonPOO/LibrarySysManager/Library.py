@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+from Media import *
+from User import *
 
 class Library():
 
@@ -10,29 +13,47 @@ class Library():
         self.catalog = []
         self.list_of_borrowed = []
 
+    def return_date(self, days):
+        return_date=datetime.now()+timedelta(days=days)
+        return return_date
+
     def borrow_item(self, item, user):
 
         if item.get_quantity() == 0:
             print("This item can't be borrow")
             return
         
+        back_date = ""
+        if isinstance(user, Professor):
+            back_date = self.return_date(10)
+        else:
+            back_date = self.return_date(7)
+
         item.set_quantity(item.get_quantity() - 1)
-        user.borrow(item)
+
+        borrow = {"obj": item, "date": back_date}
+
+        user.borrow(borrow)
         item.list_consultants(user)
-        self.list_of_borrowed.append(item)
+        self.list_of_borrowed.append(borrow)
 
     def borrowed(self):
         result = ""
+        print(f"Livros da {self.name} que estão atualmente emprestados: ")
         for item in self.list_of_borrowed:
-            print(f"{item.title}")
+            print(f"{item['obj'].title}")
         return result
         
 
-    def return_item(self, item, user):
+    def return_item(self, item_to_remove, user):
 
-        item.set_quantity(item.get_quantity() + 1)
-        user.old_consults(item)
-        self.list_of_borrowed.remove(item)
+        item_to_remove.set_quantity(item_to_remove.get_quantity() + 1)
+
+        user.old_consults(item_to_remove)
+
+        for item in self.list_of_borrowed:
+            if item["obj"] == item_to_remove:
+                self.list_of_borrowed.remove(item)
 
 
     def add_item(self, media):
