@@ -5,7 +5,7 @@ A ideia desse software é criar uma aplicação desenvolvida inteiramente no par
 
 ## Requisitos
 
-1. Todas as bibliotecas cadastradas nesse sistema poderão ver todo o acervo das outras bibliotecas, assim como os usuários. OK
+1. Todas as bibliotecas cadastradas nesse sistema poderão ver todo o acervo das outras bibliotecas, assim como os usuários. OK_
 
 1. Todas as bibliotecas poderão ver os livros emprestados, em pendência dos usuários que frequenta as bibliotecas cadastradas.
 
