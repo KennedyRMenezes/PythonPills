@@ -1,8 +1,11 @@
 from datetime import datetime, timedelta
+import random
 from Media import *
 from User import *
 
 class Library():
+
+    all_users = []
 
     def __init__(self, name: str, address: str, birth: str, phone_num: str):
         self.name = name
@@ -12,6 +15,16 @@ class Library():
 
         self.catalog = []
         self.list_of_borrowed = []
+
+    def register_user(self, name, age):
+        library_number =  random.randint(10**6, 10**7 - 1)
+        user = User(name, age, library_number)
+        self.all_users.append(user)
+
+    def list_users(self):
+        print(f"{'Name'.ljust(20)} | {'Library Number'.ljust(20)}\n")
+        for user in self.all_users:
+            print(f"{user.name.ljust(20)} | {str(user.library_num).ljust(20)}")
 
     def return_date(self, days):
         return_date=datetime.now()+timedelta(days=days)
@@ -59,11 +72,18 @@ class Library():
     def add_item(self, media):
         self.catalog.append(media)
 
-    def list_catalog(self):
+    def return_catalog(self, obj):
         print("\n","="*30)
-        print(f"Catalogo da {self.name}\n")
+        print(f"Catalogo da {obj.name}\n")
 
-        print(f"{'Item'.ljust(20)} | {'Autor'.ljust(20)} | {'Tipo'.ljust(10)}\n")
-        for item in self.catalog:
-            print(f"{item.title.ljust(20)} | {item.autor.ljust(20)} | {item.__class__.__name__.ljust(10)}")
+        print(f"{'Item'.ljust(20)} | {'Autor'.ljust(20)} | {'Tipo'.ljust(10)} | {'Quantidade'.ljust(10)}\n")
+        for item in obj.catalog:
+            print(f"{item.title.ljust(20)} | {item.autor.ljust(20)} | {item.__class__.__name__.ljust(10)} | {str(item.get_quantity()).ljust(10)}")
         print("\n\n")
+
+    def list_catalog(self, obj=None):
+        
+        if obj:
+            self.return_catalog(obj)
+        else:
+            self.return_catalog(self)
