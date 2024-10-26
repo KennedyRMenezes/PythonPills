@@ -2,54 +2,94 @@ from Library import Library
 from Media import *
 from User import *
 
-bma = Library(
+# ============ CADASTRANDO BIBLIOTECAS ============  #
+
+biMarioAndrade = Library(
     "Biblioteca Mário de Andrade",
     "Rua da Consolação, 94",
     "1925",
-    "(11)31509453")
+    "(11) 3150-9453")
 
-book1 = Book("Dom Casmurro",
+biSaoPaulo = Library(
+    "Biblioteca de São Paulo",
+    "Av. Cruzeiro do Sul, 2630",
+    "1975",
+    "(11) 2089-0800")
+
+biSaoPaulo = Library(
+    "Biblioteca Monteiro Lobato",
+    "Rua Gen. Jardim, 485",
+    "1995",
+    "(11) 3256-4122")
+
+
+# CADASTRANDO LIBRO MARIO ============  #
+
+l1bma = Book("Dom Casmurro",
              "Machado de Assis",
              "1899",
              400,
              "978-8582850350",
              "Penguin-Companhia")
-book1.set_quantity(4)
+l1bma.set_quantity(4)
 
-book2 = Book("Angústia",
+l2bma = Book("Angústia",
              "Graciliano Ramos",
              "1943",
              383,
              "978-8952850350",
              "Record")
-book2.set_quantity(1)
+l2bma.set_quantity(1)
 
 
-bma.add_item(book1)
-bma.add_item(book2)
+biMarioAndrade.add_item(l1bma)
+biMarioAndrade.add_item(l2bma)
 
-bma.list_catalog()
+# CADASTRANDO LIBRO BSP ============  #
+
+l1bma = Book("Dom Casmurro",
+             "Machado de Assis",
+             "1899",
+             400,
+             "978-8582850350",
+             "Penguin-Companhia")
+l1bma.set_quantity(10)
+
+l2bma = Book("Angústia",
+             "Graciliano Ramos",
+             "1943",
+             383,
+             "978-8952850350",
+             "Record")
+l2bma.set_quantity(1)
+
+
+biMarioAndrade.add_item(l1bma)
+biMarioAndrade.add_item(l2bma)
+
+
+biMarioAndrade.list_catalog()
 
 user1 = User("Kennedy Menezes",
              26,
              6598244)
 
-bma.borrow_item(book2, user1)
+biMarioAndrade.borrow_item(l2bma, user1)
 
 print(user1.borrowed())
-print(bma.borrowed())
-print(book2.consults())
+print(biMarioAndrade.borrowed())
+print(l2bma.consults())
 
-bma.return_item(book2, user1)
+biMarioAndrade.return_item(l2bma, user1)
 
 user2 = User("Joaquim", 34, 6598087)
 
 
 print("\n\n")
-bma.borrow_item(book2, user2)
-bma.return_item(book2, user2)
+biMarioAndrade.borrow_item(l2bma, user2)
+biMarioAndrade.return_item(l2bma, user2)
 
 user3 = User("Vivi", 31, 6598200)
-bma.borrow_item(book2, user3)
+biMarioAndrade.borrow_item(l2bma, user3)
 
-print(book2.consults())
+print(l2bma.consults())
