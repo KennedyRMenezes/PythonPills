@@ -5,13 +5,19 @@ A ideia desse software é criar uma aplicação desenvolvida inteiramente no par
 
 ## Requisitos
 
+1. Bibliotecas devem ter nome, endereço, ano de fundação e telefone.
+
 1. Todas as bibliotecas cadastradas nesse sistema poderão ver todo o acervo das outras bibliotecas, assim como os usuários. OK_
 
 1. Todas as bibliotecas poderão ver os livros emprestados, em pendência dos usuários que frequenta as bibliotecas cadastradas.
 
 1. Se todas as quantidades de um determinado livro estiverem emprestados em uma determinada biblioteca, o sistema deve mostrar em quais outras bibliotecas o livro está disponível
 
+1. Livros devem ter título, autor, ano de publicação, número de páginas, isbn e editora.
+
 1. O livro deve manter guardado todos os usuários que o pegaram emprestado.
+
+1. Usuarios precisam fornecer ano e idade e recebem um numero de carteirinha.
 
 1. Usuário do tipo normal poderá pegar livros emprestados com devolução para cinco dias. Consegue pegar emprestado no máximo três livros.
 
@@ -24,4 +30,3 @@ A ideia desse software é criar uma aplicação desenvolvida inteiramente no par
 1. Se houver apenas uma cópia do livro, este não poderá ser emprestado.
 
 1. Usuários deverão ter status de cadastro como (ativo e desligado); desligado se houver alguma pendência ou agravante com relação à biblioteca.
-
