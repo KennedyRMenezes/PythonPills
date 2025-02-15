@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import random
+import csv
 from Media import *
 from User import *
 
@@ -15,6 +16,14 @@ class Library():
 
         self.catalog = []
         self.list_of_borrowed = []
+
+        self.save_csv()
+
+    def save_csv(self):
+        with open("Librarys.csv", "a", newline="\n", encoding="utf-8") as f:
+
+            biblio = csv.writer(f, delimiter=";")
+            biblio.writerow([self.name, self.address, self.birth, self.phone_num])
 
     def register_user(self, name, age):
         library_number =  random.randint(10**6, 10**7 - 1)

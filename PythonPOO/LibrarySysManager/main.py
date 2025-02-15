@@ -5,24 +5,6 @@ from User import *
 
 print("\n# ============ CADASTRANDO BIBLIOTECAS ============  #\n")
 
-biMarioAndrade = Library(
-    "Biblioteca Mário de Andrade",
-    "Rua da Consolação, 94",
-    "1925",
-    "(11) 3150-9453")
-
-biSaoPaulo = Library(
-    "Biblioteca de São Paulo",
-    "Av. Cruzeiro do Sul, 2630",
-    "1975",
-    "(11) 2089-0800")
-
-biMonteiroLobato = Library(
-    "Biblioteca Monteiro Lobato",
-    "Rua Gen. Jardim, 485",
-    "1995",
-    "(11) 3256-4122")
-
 print("\n# CADASTRANDO LIVRO MARIO ============  #\n")
 
 l1bma = Book("Dom Casmurro",
