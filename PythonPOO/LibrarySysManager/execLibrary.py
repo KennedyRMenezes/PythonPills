@@ -6,7 +6,7 @@ def cadastraBiblioteca():
 
         nome = input("Nome da Biblioteca: ")
         endereco = input("Endereço da Biblioteca: ")
-        criacao = input("Insirada a data de criação a Biblioteca (dd/MM/AAAA): ")
+        criacao = input("Insirada o ano de criação a Biblioteca: ")
         tel = input("Insira o telefone da Biblioteca: ")
 
         Library(nome, endereco, criacao, tel)
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     if command_menu == "1":
         cadastraBiblioteca()
     elif command_menu == "2":
-        print("Entrar como admin da Biblioteca")
+        lib_id = input("Insira o ID da Biblioteca")
     else:
         print("Insira uma opção válida")
 

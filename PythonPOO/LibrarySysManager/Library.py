@@ -3,6 +3,7 @@ import random
 import csv
 from Media import *
 from User import *
+import mysql.connector as con
 
 class Library():
 
@@ -17,13 +18,36 @@ class Library():
         self.catalog = []
         self.list_of_borrowed = []
 
-        self.save_csv()
+        self.add_to_db()
 
-    def save_csv(self):
-        with open("Librarys.csv", "a", newline="\n", encoding="utf-8") as f:
+    def create_con(self):
+        # Estabelecendo a conexão
+        cnx = con.connect(
+            user='root',
+            password='*******',
+            database='Libraries',
+            host='localhost'
+        )
+        mycursor = cnx.cursor()
+        return mycursor, cnx
 
-            biblio = csv.writer(f, delimiter=";")
-            biblio.writerow([self.name, self.address, self.birth, self.phone_num])
+    def add_to_db(self):
+        # Criando a conexão e o cursor
+        cur, cnx = self.create_con()
+
+        # Usando placeholders %s para evitar SQL Injection
+        query = "INSERT INTO Library (lib_name, lib_address, lib_birth, lib_tel) VALUES (%s, %s, %s, %s)"
+        
+        # Executando a query com os valores
+        cur.execute(query, (self.name, self.address, self.birth, self.phone_num))
+
+        # Confirmando a inserção
+        cnx.commit()
+
+        # Fechando a conexão
+        cur.close()
+        cnx.close()
+
 
     def register_user(self, name, age):
         library_number =  random.randint(10**6, 10**7 - 1)
