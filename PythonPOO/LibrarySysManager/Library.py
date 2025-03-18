@@ -4,6 +4,8 @@ import csv
 from Media import *
 from User import *
 import mysql.connector as con
+from Database import Database
+db = Database()
 
 class Library():
 
@@ -20,20 +22,10 @@ class Library():
 
         self.add_to_db()
 
-    def create_con(self):
-        # Estabelecendo a conexão
-        cnx = con.connect(
-            user='root',
-            password='*******',
-            database='Libraries',
-            host='localhost'
-        )
-        mycursor = cnx.cursor()
-        return mycursor, cnx
 
     def add_to_db(self):
         # Criando a conexão e o cursor
-        cur, cnx = self.create_con()
+        cur, cnx = db.create_con()
 
         # Usando placeholders %s para evitar SQL Injection
         query = "INSERT INTO Library (lib_name, lib_address, lib_birth, lib_tel) VALUES (%s, %s, %s, %s)"

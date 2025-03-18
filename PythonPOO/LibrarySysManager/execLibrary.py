@@ -1,5 +1,9 @@
 from Library import Library
 
+
+from Database import Database
+db = Database()
+
 def cadastraBiblioteca():
 
     while True:
@@ -19,32 +23,55 @@ def cadastraBiblioteca():
         else:
             break
 
-def cadastraLivro():
+def cadastraLivro(id):
 
-    #TODO: Receber ID da Bibliotec
-    #TODO: Inserir livro "dentro" da Biblioteca
+    #TODO: Receber ID da Biblioteca
 
-    pass
+    nome_biblio = db.consultaBiblioteca(id)
+
+    if nome_biblio:
+
+        name = input("Insira o nome do livro: ")
+        author = input("Insira o nome do autor do livro: ")
+        pages = input("Insira a quantidade de páginas do livro: ")
+        num_books = input("Insira a quantidade de livros a serem cadastrados: ")
+        db.cadastraLivro(id, name, author, pages, num_books)
+
+        print("\n Livro inserido com sucesso!")
+
+    else:
+        print("ID inválido")
+
+    
 
 
 
 if __name__ == "__main__":
 
-    menu_string = """
-        
-        1 - Cadastrar Biblioteca
-        2 - Cadastrar Livro
-        
-        """
+    while True:
 
-    command_menu = input(menu_string)
-    
+        menu_string = """
+            
+            1 - Cadastrar Biblioteca
+            2 - Cadastrar Livro
+            3* - Listar o histórico de livros emprestados a um usuário
+            4* - Listar livros de uma biblioteca
+            5* - Buscar livro
+            x - Encerrar
+            
+            """
 
-    if command_menu == "1":
-        cadastraBiblioteca()
-    elif command_menu == "2":
-        lib_id = input("Insira o ID da Biblioteca")
-    else:
-        print("Insira uma opção válida")
+        command_menu = input(menu_string)
+        
+
+        if command_menu == "1":
+            cadastraBiblioteca()
+        elif command_menu == "2":
+            lib_id = input("Insira o ID da Biblioteca: ")
+            cadastraLivro(lib_id)
+        elif command_menu == "x":
+            break
+        else:
+            print("Insira uma opção válida")
 
         

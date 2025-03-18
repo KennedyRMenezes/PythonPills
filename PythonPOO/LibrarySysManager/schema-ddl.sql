@@ -7,3 +7,14 @@ CREATE TABLE Library(
     lib_birth int NOT NULL,
     lib_tel varchar(50) NOT NULL
 );
+
+CREATE TABLE Book(
+    book_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    lib_id int NOT NULL,
+    book_name varchar(100) NOT NULL,
+    book_author varchar(100) NOT NULL,
+    book_pages int NOT NULL,
+    FOREIGN KEY (lib_id) REFERENCES Library(lib_id)
+);
+
+ALTER TABLE Book ADD book_qtd int;

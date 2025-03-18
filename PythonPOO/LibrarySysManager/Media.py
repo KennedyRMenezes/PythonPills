@@ -2,11 +2,10 @@
 
 class Media():
 
-    def __init__(self, title: str, autor: str, publication_year: str):
+    def __init__(self, title: str, autor: str):
 
         self.title = title
         self.autor = autor
-        self.publication_year = publication_year
         self._quantity = 0
 
         self.all_consultants = []
@@ -31,18 +30,17 @@ class Media():
 
 class Book(Media):
     
-    def __init__(self, title: str, 
-                 autor: str, publication_year: str, 
-                 page_num: int, isbn: str, publisher: str):
+    def __init__(self, 
+                 title: str, 
+                 autor: str, 
+                 page_num: int):
         
-        super().__init__(title, autor, publication_year)
+        super().__init__(title, autor)
         self.page_nume = page_num
-        self.isbn = isbn
-        self.publisher = publisher
     
     
 
-
+'''
 class Revista(Media):
 
     def __init__(self, title: str, 
@@ -64,4 +62,4 @@ class Filme(Media):
         super().__init__(title, autor, publication_year)
         super.duration = duration
         super.genre - genre
-    
+'''
