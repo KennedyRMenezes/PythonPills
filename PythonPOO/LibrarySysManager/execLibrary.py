@@ -27,7 +27,7 @@ def cadastraLivro(id):
 
     #TODO: Receber ID da Biblioteca
 
-    nome_biblio = db.consultaBiblioteca(id)
+    nome_biblio = Library.consultaBiblioteca(id)
 
     if nome_biblio:
 
@@ -35,15 +35,12 @@ def cadastraLivro(id):
         author = input("Insira o nome do autor do livro: ")
         pages = input("Insira a quantidade de páginas do livro: ")
         num_books = input("Insira a quantidade de livros a serem cadastrados: ")
-        db.cadastraLivro(id, name, author, pages, num_books)
+        Library.cadastraLivro(id, name, author, pages, num_books)
 
         print("\n Livro inserido com sucesso!")
 
     else:
         print("ID inválido")
-
-    
-
 
 
 if __name__ == "__main__":
@@ -54,9 +51,10 @@ if __name__ == "__main__":
             
             1 - Cadastrar Biblioteca
             2 - Cadastrar Livro
-            3* - Listar o histórico de livros emprestados a um usuário
-            4* - Listar livros de uma biblioteca
-            5* - Buscar livro
+            3 - Cadastrar Usuário
+            4* - Listar o histórico de livros emprestados a um usuário
+            5* - Listar livros de uma biblioteca
+            6* - Buscar livro
             x - Encerrar
             
             """

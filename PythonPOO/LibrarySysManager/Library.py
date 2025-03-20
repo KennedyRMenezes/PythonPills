@@ -40,6 +40,35 @@ class Library():
         cur.close()
         cnx.close()
 
+    def consultaBiblioteca(self, id):
+
+        cur, cnx = db.create_con()
+
+        query = f"SELECT lib_name FROM Library WHERE lib_id = {id}"
+
+        cur.execute(query)
+
+        result = cur.fetchone()
+
+        cnx.commit()
+
+        cur.close()
+        cnx.close()
+
+        return True if result else None
+    
+    def cadastraLivro(self, lib_id, name, author, pages, num):
+
+        cur, cnx = db.create_con()
+
+        query = "INSERT INTO Book (lib_id, book_name, book_author, book_pages, book_qtd) VALUES (%s, %s, %s, %s, %s)"
+
+        cur.execute(query, (lib_id, name, author, pages, num))
+
+        cnx.commit()
+
+        cur.close()
+        cnx.close()
 
     def register_user(self, name, age):
         library_number =  random.randint(10**6, 10**7 - 1)
