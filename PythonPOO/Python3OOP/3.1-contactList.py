@@ -29,6 +29,7 @@ class Contact():
         self.name = name
         self.email = email
         self.all_contacts.append(self)
+# Conta
 
 class Suppliers(Contact):
 
@@ -42,3 +43,15 @@ class Friend(Contact):
         super().__init__(name, email)
         self.phone = phone
 
+c1 = Contact("John A", "johna@example.net")
+c2 = Contact("John B", "johnb@example.net")
+c3 = Contact("Jenna C", "jennac@example.net")
+print([c.name for c in Contact.all_contacts.search('John')])
+print()
+
+c1 = Contact("Alice", "alice@example.com")
+f1 = Friend("Bob", "bob@example.com", "123-456-7890")
+
+print(Contact.all_contacts)
+print()
+print(Contact.all_contacts[4].phone)  
