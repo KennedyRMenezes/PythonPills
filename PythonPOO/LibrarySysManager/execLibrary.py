@@ -27,7 +27,7 @@ def cadastraLivro(id):
 
     #TODO: Receber ID da Biblioteca
 
-    nome_biblio = Library.consultaBiblioteca(id)
+    nome_biblio = Library.query_library(id)
 
     if nome_biblio:
 
@@ -35,7 +35,7 @@ def cadastraLivro(id):
         author = input("Insira o nome do autor do livro: ")
         pages = input("Insira a quantidade de páginas do livro: ")
         num_books = input("Insira a quantidade de livros a serem cadastrados: ")
-        Library.cadastraLivro(id, name, author, pages, num_books)
+        Library.register_book(id, name, author, pages, num_books)
 
         print("\n Livro inserido com sucesso!")
 

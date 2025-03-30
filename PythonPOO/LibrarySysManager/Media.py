@@ -8,8 +8,6 @@ class Media():
         self.autor = autor
         self._quantity = 0
 
-        self.all_consultants = []
-
     # List of all users that consult the media
     def list_consultants(self, user):
         self.all_consultants.append(user)
@@ -38,7 +36,8 @@ class Book(Media):
         super().__init__(title, autor)
         self.page_nume = page_num
     
-    
+    def register_book(self, *args):
+        pass
 
 '''
 class Revista(Media):
