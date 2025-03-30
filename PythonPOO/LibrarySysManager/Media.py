@@ -1,5 +1,3 @@
-
-
 class Media():
 
     def __init__(self, title: str, autor: str):

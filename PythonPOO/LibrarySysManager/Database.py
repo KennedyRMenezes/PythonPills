@@ -6,7 +6,7 @@ class Database:
         # Estabelecendo a conexão
         cnx = con.connect(
             user='root',
-            password='****',
+            password='*',
             database='Libraries',
             host='localhost'
         )
@@ -22,11 +22,14 @@ class Database:
         else:
             cur.execute(query, args)
 
-        result = cur.fetchone()
+        result = cur.fetchall()
 
         cnx.commit()
 
         cur.close()
         cnx.close()
 
-        return True if result else False
+        if result:
+            return True, result
+        else:
+            return False, 0

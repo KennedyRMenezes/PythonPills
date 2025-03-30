@@ -18,3 +18,10 @@ CREATE TABLE Book(
 );
 
 ALTER TABLE Book ADD book_qtd int;
+
+CREATE TABLE User(
+    user_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_name varchar(50) NOT NULL,
+    user_tel varchar(50),
+    user_address varchar(50) NOT NULL
+)
