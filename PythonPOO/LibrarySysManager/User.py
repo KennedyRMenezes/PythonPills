@@ -1,13 +1,23 @@
+from Database import Database
 
 class User():
 
-    def __init__(self, name, age, library_num):
+    db = Database()
+
+    def __init__(self, name, birth, address):
         self.name = name
-        self.age = age
-        self.library_num = library_num
+        self.birth = birth
+        self.address = address
 
         self.list_of_borrowed = []
         self.list_old_consults = []
+
+        self.register_library()
+
+    def register_library(self):
+        
+        query = "INSERT INTO User (user_name, user_birth, user_address) VALUES (%s, %s, %s)"
+        User.db.make_query(query, self.name, self.birth, self.address)
 
 
     def borrow(self, item):

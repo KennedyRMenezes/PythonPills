@@ -6,7 +6,7 @@ class Database:
         # Estabelecendo a conexão
         cnx = con.connect(
             user='root',
-            password='*',
+            password='21535030',
             database='Libraries',
             host='localhost'
         )

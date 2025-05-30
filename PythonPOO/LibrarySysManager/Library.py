@@ -17,7 +17,7 @@ class Library():
 
         self.register_library()
 
-
+    @staticmethod
     def register_library(self):
         
         query = "INSERT INTO Library (lib_name, lib_address, lib_birth, lib_tel) VALUES (%s, %s, %s, %s)"
