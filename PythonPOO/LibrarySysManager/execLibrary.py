@@ -1,7 +1,7 @@
 from Library import Library
 from User import User
 
-def cadastraBiblioteca():
+def cadastra_biblioteca():
 
     while True:
 
@@ -20,7 +20,7 @@ def cadastraBiblioteca():
         else:
             break
 
-def cadastraLivro(id):
+def cadastra_livro(id):
 
     id_biblio = Library.query_library(id)
 
@@ -37,7 +37,7 @@ def cadastraLivro(id):
     else:
         print("ID inválido")
 
-def cadastraUsuario():
+def cadastra_usuario():
 
     name = input("Insira o nome do usuario: ")
     age = input("Insira a data de nascimento(aaaa-mm-dd): ")
@@ -46,7 +46,7 @@ def cadastraUsuario():
     User(name, age, address)
 
 
-def listaLivros(id):
+def lista_livros(id):
 
     Library.list_books(id)
 
@@ -80,13 +80,15 @@ if __name__ == "__main__":
         command_menu = input(menu_string)
 
         if command_menu == "1":
-            cadastraBiblioteca()
+            cadastra_biblioteca()
         elif command_menu == "2":
-            cadastraLivro(request_id())
+            cadastra_livro(request_id())
         elif command_menu == "3":
-            cadastraUsuario()
+            cadastra_usuario()
+        elif command_menu == "4":
+            empresta_livro(request_id())
         elif command_menu == '5':
-            listaLivros(request_id())
+            lista_livros(request_id())
         elif command_menu == "x":
             break
         else:
